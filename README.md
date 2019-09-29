@@ -60,3 +60,30 @@ module.exports = buildSchema(`
 ## MongoDB
 
 > Connected by `mongoose`. Модель описана в `./api/model.js`.
+
+## About `./api/scheme.gql` file
+
+> В папке `./api` создадим файл `schema.graphql` и перенесем схему туда.
+
+```graphql
+# ./api/schema.gql
+
+type Step {
+  title: String!
+  completed: Boolean!
+}
+
+# Others...
+```
+
+```javascript
+// ./api/schema.js
+
+const path = require('path');
+const fs = require('fs');
+
+const { buildSchema } = require('qraphql');
+const schema = fs.readFieSync(path.resolve(__dirname, 'schema.gql'), 'utf-8');
+
+module.exports = buildSchema(schema);
+```
