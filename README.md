@@ -28,7 +28,7 @@ api.all('/graphql', qraphqlMiddleware({
 
 ## Types
 
-> Все в gql имеет тип с описанными типизированными свойствами. Запятые в gql необязательны.
+> Все в gql имеет тип с описанными типизированными свойствами. Запятые в gql необязательны. See also [https://graphql.org/graphql-js/basic-types/](https://graphql.org/graphql-js/basic-types/).
 
 ```javascript
 // ./api/schema.js for example
@@ -41,7 +41,7 @@ module.exports = buildSchema(`
     completed: Boolean!
   }
 
-  // ...
+  # Others...
 `);
 ```
 
@@ -49,7 +49,7 @@ module.exports = buildSchema(`
 
 > Каждая из функций должна вернуть тип в соответствии со схемой.
 
-### `type Mutation`
+## `type Mutation`
 
 > Как ни странно, используются для возможности изменения данных. Описывает названия функций-резолверорв (объявленных в `./resolvers.js`) с агрументами для изменений. В качестве типов принимаемых значений мы можем указывать только специальные типы входных данных вроде `type InputTodo` (в отличие от типов вроде `type Todo` они описаны отдельно, т.к. они не всегда сходятся один к одному), а так же описываются типы возвращаемых значений.
 
@@ -63,7 +63,7 @@ module.exports = buildSchema(`
 
 ## About `./api/scheme.gql` file
 
-> В папке `./api` создадим файл `schema.graphql` и перенесем схему туда.
+> В папке `./api` создадим файл `schema.gql` и перенесем схему туда.
 
 ```graphql
 # ./api/schema.gql
@@ -75,6 +75,8 @@ type Step {
 
 # Others...
 ```
+
+_So we have to update `./api/schema.js` like this:_
 
 ```javascript
 // ./api/schema.js
