@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "title": "Оформить подписку",
+    "completed": true
+  },
+  {
+    "id": 2,
+    "title": "Познакомиться с GraphQL",
+    "completed": true,
+    "steps": [
+      {
+        "title": "Запросы",
+        "completed": true
+      },
+      {
+        "title": "Вложенные поля",
+        "completed": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Create GraphQL server",
+    "completed": false,
+    "steps": [
+      {
+        "title": "Create Express server",
+        "completed": false
+      },
+      {
+        "title": "Add gql requests route",
+        "completed": false
+      },
+      {
+        "title": "Create gql scheme",
+        "completed": false
+      },
+      {
+        "title": "Write resolve fns",
+        "completed": false
+      }
+    ]
+  }
+]

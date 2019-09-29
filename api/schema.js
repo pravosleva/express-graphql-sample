@@ -1,0 +1,39 @@
+const { buildSchema } = require('graphql');
+
+module.exports = buildSchema(`
+  type Step {
+    title: String!
+    completed: Boolean!
+  }
+  type Todo {
+    id: ID!
+    title: String!
+    completed: Boolean!
+    steps: [Step]
+  }
+  enum Status {
+    COMPLETED
+    UNCOMPLETED
+  }
+  type Query {
+    todo(id: ID!): Todo!
+    todos: [Todo]!
+    completedTodos: [Todo]
+    todosByStatus(status: Status): [Todo]
+  }
+
+  input StepInput {
+    title: String!
+    completed: Boolean = false
+  }
+  input TodoInput {
+    title: String!
+    completed: Boolean = false
+    steps: [StepInput]
+  }
+  type Mutation {
+    createTodo(input: TodoInput!): Todo
+    updateTodo(id: ID!, input: TodoInput!): Todo
+    deleteTodo(id: ID!): ID
+  }
+`);
