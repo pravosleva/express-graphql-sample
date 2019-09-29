@@ -16,8 +16,8 @@ module.exports = {
   //     default:
   //       return todos;
   //   },
-  todosByStatus: ({ status }) => Todo.find({ status })
-  },
+  // },
+  todosByStatus: ({ status }) => Todo.find({ status }),
   createTodo: ({ input }) => Todo.create(input),
   updateTodo: ({ id, input }) => {
     return Todo.findByIdAndUpdate(id, input, {
