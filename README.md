@@ -61,6 +61,11 @@ module.exports = buildSchema(`
 
 > Connected by `mongoose`. Модель описана в `./api/model.js`.
 
+_Note: `.env` file should be created for have this:_
+```
+MONGOLAB_URI="mongodb://<user>:<passwd>@<host>:<port>/express-graphql-sample"
+```
+
 ## About `./api/scheme.gql` file
 
 > В папке `./api` создадим файл `schema.gql` и перенесем схему туда.
